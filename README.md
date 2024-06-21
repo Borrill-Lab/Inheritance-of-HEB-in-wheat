@@ -4,7 +4,7 @@
 
 ## Data availability:
 
-All RNA-seq data were uploaded to [Sequence Read Archive (SRA)]([url](https://www.ncbi.nlm.nih.gov/sra)) under the BioProject ID XXXXXX.
+All RNA-seq data were uploaded to [Sequence Read Archive (SRA)]([https://www.ncbi.nlm.nih.gov/sra]) under the BioProject ID XXXXXX.
 
 ## Methodology:
 
