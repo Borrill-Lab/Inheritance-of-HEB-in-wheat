@@ -8,7 +8,9 @@ All RNA-seq data were uploaded to [Sequence Read Archive (SRA)](https://www.ncbi
 
 ## Methodology:
 
-Scripts are organised by Methods sections as outlined in the manuscript.
+Scripts are organised by Methods sections as outlined in the manuscript in the [scripts](scripts/) folder.
+
+All data (where possible) necessary for scripts to run is organised by Methods sections in the [data_tables](data_tables/) folder.
 
   ### 1. HEB analysis
 
@@ -26,3 +28,7 @@ Scripts are organised by Methods sections as outlined in the manuscript.
 
 
   ### 6. Detection of eQTL
+
+## Figures:
+
+The code for recreating figure panels along with ready to plot data is organised by figure numbers as stated in the manuscript, in the [figures](figures/) folder.
