@@ -1,4 +1,4 @@
-Data tables necessary to run the scripts are available on [figshare]([url](https://figshare.com/account/projects/214495/articles/26393995))
+Data tables necessary to run the scripts are available on[figshare]([url](https://figshare.com/account/projects/214495/articles/26393995)).
 
 ## Scripts:
 kallistoPC.pl and kallistoPW.pl - run pseudoalignment and quantification on RNA-seq data
