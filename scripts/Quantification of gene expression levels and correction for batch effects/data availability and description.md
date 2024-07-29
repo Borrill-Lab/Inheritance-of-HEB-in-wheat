@@ -1,3 +1,5 @@
+# Quantification of gene expression levels and correction for batch effects
+
 Data tables necessary to run the scripts are available on [figshare](https://figshare.com/account/projects/214495/articles/26393995)
 
 ## Scripts:
