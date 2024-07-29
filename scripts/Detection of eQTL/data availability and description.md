@@ -1,5 +1,5 @@
 # Detection of eQTL
 
-Data tables necessary to run scripts are available on
+Data tables necessary to run the scripts are available on
 
 ## Scripts:
