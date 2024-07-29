@@ -1,8 +1,14 @@
 # SNP genotyping of F5 lines
 
-Data tables necessary to run the scripts are available on 
+RNA-seq data necessary to run the scripts are available on SRA
 
-# Scripts:
+## Scripts:
+
+trimPC/PW60.pl - performs trimming of the RNA-seq data
+hisatPC/PW.pl - performs mapping of trimmed RNa-seq data to the genome reference
+picard-markdup-index-PC/PW.pl - performs preparation of bamfiles for variant calling
+haplotype-caller-PC/PW.pl - performs haplotype calling on individiual samples
+gatk-genotypegvcfs.PC/PW.pl - performs joint genotyping on samples
 
 
 # Detection of eQTL
