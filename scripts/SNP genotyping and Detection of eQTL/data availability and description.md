@@ -1,6 +1,6 @@
 # SNP genotyping of F5 lines
 
-RNA-seq data necessary to run the scripts are available on SRA
+RNA-seq data necessary to run the scripts are available on SRA under the BioProject ID PRJNA1128551.
 
 ## Scripts:
 
