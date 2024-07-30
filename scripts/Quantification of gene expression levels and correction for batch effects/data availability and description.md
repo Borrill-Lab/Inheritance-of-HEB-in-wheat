@@ -4,5 +4,7 @@ Data tables necessary to run the scripts are available on [figshare](https://fig
 
 ## Scripts:
 kallistoPC.pl and kallistoPW.pl - run pseudoalignment and quantification on RNA-seq data
+
 tximport_summarise_counts_tpm_per_gene.R - extract raw counts and TPM values
+
 batch_correction.R - normalise count data, run PCA and correction for batch effects
