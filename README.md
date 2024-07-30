@@ -11,8 +11,7 @@ All RNA-seq data were uploaded to [Sequence Read Archive (SRA)](https://www.ncbi
 Scripts are organised by Methods sections as outlined in the manuscript in the [scripts](scripts/) folder.
 
 
-
-  ### 1. HEB analysis
+  ### 1. [HEB analysis](scripts/HEB/)
 
 
   ### 2. Gene ontology term enrichment
@@ -28,6 +27,8 @@ Scripts are organised by Methods sections as outlined in the manuscript in the [
 
 
   ### 6. Detection of eQTL
+
+_Note: Sections 4 and 6 are coupled together due to overlapping code sections._
 
 ## Figures:
 
