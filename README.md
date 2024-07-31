@@ -20,7 +20,7 @@ Scripts are organised by Methods sections as outlined in the manuscript in the [
   ### 3. Variant calling, genotyping and association between genotype and homoeolog expression
 
   
-  ### 4. SNP genotyping of F6 lines for eQTL mapping
+  ### 4. SNP genotyping of F<sub>5</sub> lines for eQTL mapping
 
 
   ### 5. Quantification of gene expression levels and correction for batch effects
