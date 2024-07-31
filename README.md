@@ -20,7 +20,7 @@ Scripts are organised by Methods sections as outlined in the manuscript in the [
   ### 1. [HEB analysis](scripts/HEB/)
 
 
-  ### 2. [Gene ontology term enrichment](scripts/Gene ontology term enrichment/)
+  ### 2. [Gene ontology term enrichment](scripts/Gene%20ontology%20term%20enrichment/)
 
 
   ### 3. [Variant calling, genotyping and association between genotype and homoeolog expression](scripts/Variant calling, genotyping and association between genotype and homoeolog expression/)
