@@ -20,19 +20,19 @@ Scripts are organised by Methods sections as outlined in the manuscript in the [
   ### 1. [HEB analysis](scripts/HEB/)
 
 
-  ### 2. [Gene ontology term enrichment](scripts/Gene ontology term enrichment)
+  ### 2. [Gene ontology term enrichment](scripts/Gene ontology term enrichment/)
 
 
-  ### 3. [Variant calling, genotyping and association between genotype and homoeolog expression](scripts/Variant calling, genotyping and association between genotype and homoeolog expression)
+  ### 3. [Variant calling, genotyping and association between genotype and homoeolog expression](scripts/Variant calling, genotyping and association between genotype and homoeolog expression/)
 
   
-  ### 4. [SNP genotyping of F<sub>5</sub> lines for eQTL mapping](scripts/SNP genotyping and Detection of eQTL)
+  ### 4. [SNP genotyping of F<sub>5</sub> lines for eQTL mapping](scripts/SNP genotyping and Detection of eQTL/)
 
 
-  ### 5. [Quantification of gene expression levels and correction for batch effects](scripts/Quantification of gene expression levels and correction for batch effects)
+  ### 5. [Quantification of gene expression levels and correction for batch effects](scripts/Quantification of gene expression levels and correction for batch effects/)
 
 
-  ### 6. [Detection of eQTL](scripts/SNP genotyping and Detection of eQTL)
+  ### 6. [Detection of eQTL](scripts/SNP genotyping and Detection of eQTL/)
 
 _Note: Sections 4 and 6 are coupled together due to overlapping code sections._
 
