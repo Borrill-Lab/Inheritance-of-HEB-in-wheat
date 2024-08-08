@@ -1068,10 +1068,21 @@ ggplot(PWstdevplots,aes(classification,logstdev,fill=classification)) + geom_box
 
 bothstdevplot <- rbind(PCstdevplots,PWstdevplots)
 
-ggplot(bothstdevplot,aes(classification,logstdev)) +
-  geom_boxplot(aes(color=cross)) +
+#test for significant difference in log(SD) between associated and not associated homoeologs
+wilcox_bothstdev <- bothstdevplot[bothstdevplot$logstdev!='-Inf',]
+wilcox_bothstdev <- wilcox_bothstdev %>%
+  group_by(cross) %>%
+  wilcox_test(logstdev ~ classification) %>%
+  add_significance() %>%
+  add_xy_position(x='cross')
+wilcox_bothstdev
+
+ggplot(bothstdevplot,aes(cross,logstdev)) +
+  geom_boxplot(aes(color=cross,fill=classification),lwd=2) +
   scale_color_manual(values = c('black','#009128ff')) +
-  scale_x_discrete(labels=c('Associated','Not associated')) +
+  scale_fill_manual(values = c('white','grey'),labels=c('Associated','Not associated')) +
+  scale_x_discrete(labels=c('PxC','PxW')) +
+  stat_pvalue_manual(wilcox_bothstdev,label = 'p.signif',tip.length = 0,bracket.nudge.y = 1,label.size = 10) +
   theme_bw() +
   ylab('log(SD) of normalised\nhomoeolog expression (CPM)') +
   xlab('Homoeolog association between inherited genotype\nand expression') +
@@ -1079,4 +1090,4 @@ ggplot(bothstdevplot,aes(classification,logstdev)) +
         axis.text = element_text(size=26),
         legend.text = element_text(size = 30),
         legend.title = element_blank())
-ggsave(plot = last_plot(),filename = 'homoeolog_stdev.svg',device = 'svg',dpi = 400,width = 10,height = 10,units = "in")
+ggsave(plot = last_plot(),filename = 'homoeolog_stdev_stats.svg',device = 'svg',dpi = 400,width = 10,height = 10,units = "in")
