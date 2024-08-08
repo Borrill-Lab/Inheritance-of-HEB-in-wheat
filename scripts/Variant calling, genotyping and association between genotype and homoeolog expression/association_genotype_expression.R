@@ -681,8 +681,8 @@ PWsupp_table <- PWsupp_table[,c('f6line','group_id','A_tpm','B_tpm','D_tpm','A',
 PCsupp_table$cv <- PCsupp_table$cv*100
 PWsupp_table$cv <- PWsupp_table$cv*100
 
-write.table(PCsupp_table,'/Users/glombik/work/Documents/my_articles/inheritance_2023/Supplementary_table_2.csv',quote = F,row.names = F,sep = ',')
-write.table(PWsupp_table,'/Users/glombik/work/Documents/my_articles/inheritance_2023/Supplementary_table_3.csv',quote = F,row.names = F,sep = ',')
+write.table(PCsupp_table,'/Users/glombik/work/Documents/my_articles/inheritance_2023/Supplementary_table_2.tsv',quote = F,row.names = F,sep = '\t')
+write.table(PWsupp_table,'/Users/glombik/work/Documents/my_articles/inheritance_2023/Supplementary_table_3.tsv',quote = F,row.names = F,sep = '\t')
 
 
 
