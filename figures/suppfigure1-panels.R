@@ -3,7 +3,7 @@ library(ggplot2)
 library(svglite)
 
 # Panel A
-suppfig1_panelA <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/suppfig1-panelA',header = T)
+suppfig1_panelA <- read.table('suppfig1-panelA',header = T)
 
 ggplot(suppfig1_panelA) +
   geom_boxplot(aes(x=parent,y=genotype_count,fill=parent),show.legend=F) +
@@ -21,7 +21,7 @@ ggplot(suppfig1_panelA) +
 ggsave(filename = 'suppfig1_panelA.svg',device = 'svg',dpi = 400,width = 14,height = 10,units = "in")
 
 # Panel B
-suppfig1_panelB <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/suppfig1-panelB',header = T)
+suppfig1_panelB <- read.table('suppfig1-panelB',header = T)
 
 ggplot(suppfig1_panelB,aes(cross.x,distance,color=cross.x)) +
   geom_violin(show.legend = F) +
