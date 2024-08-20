@@ -17,6 +17,8 @@ The wheat transcriptome reference and genome annotation used to map SNPs to is T
 
 The triad identification file "homoeologs_1_1_1_synt_and_non_synt.csv" is adapted from [HCtriads.tsv](https://opendata.earlham.ac.uk/wheat/under_license/toronto/Ramirez-Gonzalez_etal_2018-06025-Transcriptome-Landscape/data/TablesForExploration/) published as a part of datased in [Ramírez-González et al. (2018)](https://www.science.org/doi/full/10.1126/science.aar6089).
 
+All data tables necessary to run scripts associated with this project are located in the [figshare](https://figshare.com/projects/Reprogramming_and_stabilisation_of_homoeolog_expression_bias_in_hexaploid_wheat_biparental_populations/214495) repository, organised by Methods sections just like scripts (see below).
+
 ## Methodology:
 
 Scripts are organised by Methods sections as outlined in the manuscript in the [scripts](scripts/) folder.
