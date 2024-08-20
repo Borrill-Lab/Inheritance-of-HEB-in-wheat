@@ -1,7 +1,6 @@
 # Inheritance-of-HEB-in-wheat
 
-![Figure5_schematic_V5](https://github.com/user-attachments/assets/2e96c745-c24f-4d6f-bcf8-b3638a70438a)
-
+<img src="https://github.com/user-attachments/assets/2e96c745-c24f-4d6f-bcf8-b3638a70438a" width="448">
 
 ## Background:
 
