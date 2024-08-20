@@ -8,7 +8,7 @@ library(ComplexUpset)
 
 
 # panel A
-fig4_panelA <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig4-panelA',header = T)
+fig4_panelA <- read.table('fig4-panelA',header = T)
 
 ggplot(fig4_panelA,aes(y = forcats::fct_rev(Cross),fill=Subgenome)) + geom_bar(position = position_dodge2(reverse = T),color='black') +
   scale_fill_manual(values = c('#579D1C','#4B1F6F','#FF950E')) +
@@ -27,9 +27,9 @@ ggplot(fig4_panelA,aes(y = forcats::fct_rev(Cross),fill=Subgenome)) + geom_bar(p
 ggsave(plot = last_plot(),filename = 'fig4_panelA.svg',device = 'svg',width = 12,height = 6,units = 'in',dpi = 500)
 
 # panel B - Upset plots were generated separately and then combined together in Inkscape to generate the final figure
-fig4_panelBcis <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig4-panelBcis',header = T)
-fig4_panelBtranss <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig4-panelBtranss',header = T)
-fig4_panelBtransd <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig4-panelBtransd',header = T)
+fig4_panelBcis <- read.table('fig4-panelBcis',header = T)
+fig4_panelBtranss <- read.table('fig4-panelBtranss',header = T)
+fig4_panelBtransd <- read.table('fig4-panelBtransd',header = T)
 
 upset(fig4_panelBcis,c('gene_D','gene_B','gene_A','snp_D','snp_B','snp_A'),sort_sets=F, set_sizes = F,
       sort_intersections=F,
@@ -147,9 +147,9 @@ upset(fig4_panelBtransd,c('gene_D','gene_B','gene_A','snp_D','snp_B','snp_A'),so
 ggsave(filename = 'fig4_panelBtransd.svg',device = 'svg',width = 13,height = 10,units = 'in',dpi = 500)
 
 # panel C - Upset plots were generated separately and then combined together in Inkscape to generate the final figure
-fig4_panelCcis <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig4-panelCcis',header = T)
-fig4_panelCtranss <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig4-panelCtranss',header = T)
-fig4_panelCtransd <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig4-panelCtransd',header = T)
+fig4_panelCcis <- read.table('fig4-panelCcis',header = T)
+fig4_panelCtranss <- read.table('fig4-panelCtranss',header = T)
+fig4_panelCtransd <- read.table('fig4-panelCtransd',header = T)
 
 
 
