@@ -3,8 +3,8 @@ library(ggplot2)
 library(ggtern)
 
 # Panel A
-suppfig2_panelA_PC <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/suppfig2-panelA-PC',header = T)
-suppfig2_panelA_PW <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/suppfig2-panelA-PW',header = T)
+suppfig2_panelA_PC <- read.table('suppfig2-panelA-PC',header = T)
+suppfig2_panelA_PW <- read.table('suppfig2-panelA-PW',header = T)
 
 ggtern(suppfig2_panelA_PC,aes(A,D,B)) + 
   stat_density_tern(geom = 'polygon',aes(fill=after_stat(log(level))),bins=20,bdl = 0.01,bdl.val = NA) +
@@ -29,8 +29,8 @@ ggtern(suppfig2_panelA_PW,aes(A,D,B)) +
 ggsave('suppfig2_panelA_PW.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
 
 # Panel B
-suppfig2_panelB_PC <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/suppfig2-panelB-PC',header = T)
-suppfig2_panelB_PW <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/suppfig2-panelB-PW',header = T)
+suppfig2_panelB_PC <- read.table('suppfig2-panelB-PC',header = T)
+suppfig2_panelB_PW <- read.table('suppfig2-panelB-PW',header = T)
 
 ggtern(suppfig2_panelB_PC,aes(A,D,B)) + 
   stat_density_tern(geom = 'polygon',aes(fill=after_stat(log(level))),bins=20,bdl = 0.01,bdl.val = NA) +
@@ -56,8 +56,8 @@ ggsave('suppfig2_panelB_PW.svg',device = 'svg',height = 8,width = 12,dpi = 400,u
 
 
 # Panel C
-suppfig2_panelC_PC <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/suppfig2-panelC-PC',header = T)
-suppfig2_panelC_PW <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/suppfig2-panelC-PW',header = T)
+suppfig2_panelC_PC <- read.table('suppfig2-panelC-PC',header = T)
+suppfig2_panelC_PW <- read.table('suppfig2-panelC-PW',header = T)
 
 ggtern(suppfig2_panelC_PC,aes(A,D,B)) + 
   stat_density_tern(geom = 'polygon',aes(fill=after_stat(log(level))),bins=20,bdl = 0.01,bdl.val = NA) +
