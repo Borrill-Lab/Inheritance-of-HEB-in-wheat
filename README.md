@@ -43,4 +43,4 @@ _Note: Sections 4 and 6 are coupled together due to overlapping code sections._
 
 ## Figures:
 
-The code for recreating figure panels along with ready to plot data is organised by figure numbers as stated in the manuscript, in the [figures](figures/) folder.
+The code for recreating figure panels is in the [figures](figures/) folder. The ready to plot data are located in the [figshare](https://figshare.com/projects/Reprogramming_and_stabilisation_of_homoeolog_expression_bias_in_hexaploid_wheat_biparental_populations/214495) repository associated with this project.
