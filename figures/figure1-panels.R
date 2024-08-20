@@ -7,7 +7,7 @@ library(svglite)
 library(ggpattern)
 library(ggpubr)
 # Panel A - base with an example triad expression based on CV difference between replicates - finishing touches done in Inkscape
-fig1_panelA <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig1-panelA',header = T)
+fig1_panelA <- read.table('fig1-panelA',header = T)
 
 ggtern(fig1_panelA,aes(A_tpm,D_tpm,B_tpm)) +
   geom_Tline(Tintercept = c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9),colour="white",linetype="dashed") +
@@ -22,7 +22,7 @@ ggsave('fig1_panelA.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 
 
 # Panel B
 
-fig1_panelB <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig1-panelB',header = T)
+fig1_panelB <- read.table('fig1-panelB',header = T)
 fig1_panelB$Categories <- as.character(fig1_panelB$Categories)
 
 ggplot(fig1_panelB,aes(perc,countperc,color=cross,linetype=Categories)) +
@@ -42,7 +42,7 @@ ggplot(fig1_panelB,aes(perc,countperc,color=cross,linetype=Categories)) +
 ggsave('fig1-panelB.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
 
 # Panel C
-fig1_panelC <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig1-panelC',header = T,sep = '\t')
+fig1_panelC <- read.table('fig1-panelC',header = T,sep = '\t')
 fig1_panelC$gt_sig <- gsub('Significant effect of a genotype','Significant effect\nof a genotype',fig1_panelC$gt_sig)
 
 ggplot(fig1_panelC,aes(cross)) + geom_bar_pattern(aes(pattern=gt_sig),color='black',fill='white',pattern_fill='black',
@@ -77,7 +77,7 @@ ggplot(fig1_panelC,aes(cross)) + geom_bar_pattern(aes(pattern=gt_sig),color='bla
 ggsave('fig1-panelC.svg',device = 'svg',height = 8,width = 10,dpi = 400,units = 'in',plot = last_plot())
 
 # Panel D - Plot only chr A as the results are very similar across homoeologous chromosomes
-fig1_panelD <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig1-panelD',header = T,sep = '\t')
+fig1_panelD <- read.table('fig1-panelD',header = T,sep = '\t')
 
 chr_len <- read.table('chr_len',header=T)
 colnames(chr_len) <- c('chr','length')
@@ -114,7 +114,7 @@ ggplot() +
 ggsave('fig1-panelD.svg',device = 'svg',height = 12,width = 9,dpi = 400,units = 'in',plot = last_plot())
 
 # Panel E
-fig1_panelE <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig1-panelE',header = T,sep = '\t')
+fig1_panelE <- read.table('fig1-panelE',header = T,sep = '\t')
 fig1_panelE$gt_sig <- gsub('Significant effect of a genotype','Significant effect\nof a genotype',fig1_panelE$gt_sig)
 
 ggplot(fig1_panelE) + geom_density_pattern(aes(distance,pattern=gt_sig),color='black',fill='white',pattern_fill='black',
