@@ -10,7 +10,7 @@ library(rstatix)
 
 
 # panel A
-fig3_panelA <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig3-panelA',header = T,sep = '\t')
+fig3_panelA <- read.table('fig3-panelA',header = T,sep = '\t')
 
 
 #test for significant difference in log(SD) between associated and not associated homoeologs
@@ -38,7 +38,7 @@ ggplot(fig3_panelA,aes(cross,logstdev)) +
 ggsave(plot = last_plot(),filename = 'fig3_panelA.svg',device = 'svg',dpi = 400,width = 10,height = 10,units = "in")
 
 # panel B
-fig3_panelB <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig3-panelB',header = T,sep = '\t')
+fig3_panelB <- read.table('fig3-panelB',header = T,sep = '\t')
 
 ggplot(fig3_panelB,aes(`To.C`,`To.P`)) + 
   geom_point(data=fig3_panelB,size=5,aes(group=inherited_genotype_collapsed,fill=inherited_genotype_collapsed),pch=21,alpha=0.8,color='black',show.legend = F) +
@@ -67,7 +67,7 @@ ggsave('fig3_panelB.svg',device = 'svg',height = 8,
        width = 8,dpi = 400,units = 'in',plot = last_plot())
 
 # panel C - not final - finishing touches done in Inkscape
-fig3_panelC <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig3-panelC',header = T,sep = '\t')
+fig3_panelC <- read.table('fig3-panelC',header = T,sep = '\t')
 fig3parentgroup = c("Charger = P2","Paragon = P1")
 
 ggtern(fig3_panelC,aes(A_tpm,D_tpm,B_tpm),group=inherited_genotype_collapsed) +
