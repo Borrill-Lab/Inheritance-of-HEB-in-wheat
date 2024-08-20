@@ -9,7 +9,7 @@ library(ggpubr)
 library(gplots)
 
 # panel A
-fig2_panelA <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig2-panelA',header = T,sep = '\t')
+fig2_panelA <- read.table('fig2-panelA',header = T,sep = '\t')
 
 
 ggplot(fig2_panelA,aes(`distance_to_parent_To.C`,`distance_to_parent_To.P`)) + 
@@ -40,7 +40,7 @@ ggplot(fig2_panelA,aes(`distance_to_parent_To.C`,`distance_to_parent_To.P`)) +
 ggsave('fig2_panelA.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
 
 # panel B
-fig2_panelB <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig2-panelB',header = T,sep = '\t')
+fig2_panelB <- read.table('fig2-panelB',header = T,sep = '\t')
 
 ggplot(fig2_panelB,aes(`distance_to_parent_To.W`,`distance_to_parent_To.P`)) + 
   geom_point(data=fig2_panelB,size=0.3,aes(group=category,color=category),show.legend = F,alpha=0) +
@@ -89,7 +89,7 @@ ggtern(emptycv,aes(A_tpm,D_tpm,B_tpm)) +
 ggsave('fig2_panelC.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
 
 # panel D
-fig2_panelD <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig2-panelD',header = T,sep = '\t')
+fig2_panelD <- read.table('fig2-panelD',header = T,sep = '\t')
 
 heatPCsumbartab <- fig2_panelD[,1:3]
 heatPCsumbartab$perc <- (heatPCsumbartab$counts/50)*100
@@ -122,7 +122,7 @@ dev.off()
 
 
 # panel E
-fig2_panelE <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig2-panelE',header = T,sep = '\t')
+fig2_panelE <- read.table('fig2-panelE',header = T,sep = '\t')
 
 heatPWsumbartab <- fig2_panelE[,1:3]
 heatPWsumbartab$perc <- (heatPWsumbartab$counts/50)*100
@@ -156,7 +156,7 @@ dev.off()
 
 # panel F
 
-fig2_panelF <- read.table('/Users/glombik/work/Documents/my_articles/inheritance_2023/figure_scripts_github/fig2-panelF',header = T,sep = '\t')
+fig2_panelF <- read.table('fig2-panelF',header = T,sep = '\t')
 fig2_panelF$cat_over_15 <- factor(fig2_panelF$cat_over_15,levels=c('Uncategorised','DFO_b','DFO_a','DFB','Conserved'))
 fig2_panelF$cross <- factor(fig2_panelF$cross,levels=c('PxC','PxW','Overlap'))
 
