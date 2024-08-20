@@ -1,5 +1,8 @@
 # Inheritance-of-HEB-in-wheat
 
+![Figure5_schematic_V5](https://github.com/user-attachments/assets/2e96c745-c24f-4d6f-bcf8-b3638a70438a)
+
+
 ## Background:
 
 This repository contains scripts and links to data tables and raw sequencing data to a pre-print: "Rapid reprogramming and stabilisation of homoeolog expression bias in hexaploid wheat biparental populations" (link).
