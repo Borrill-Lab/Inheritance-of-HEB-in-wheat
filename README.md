@@ -13,7 +13,7 @@ In this study, we analyse Homoeolog Expression Bias inheritance patterns in two 
 
 ## Data availability:
 
-All RNA-seq data were uploaded to [Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra) under the BioProject ID PRJNA1128551.
+All RNA-seq data were uploaded to [Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/bioproject/?term=(PRJNA1128551)%20AND%20bioproject_sra[filter]%20NOT%20bioproject_gap[filter]) under the BioProject ID PRJNA1128551.
 
 The wheat genome reference used to map/pseudoalign the RNA-seq data to is The IWGSC RefSeq v1.0 assembly available [here](https://urgi.versailles.inra.fr/download/iwgsc/IWGSC_RefSeq_Assemblies/v1.0/). 
 
