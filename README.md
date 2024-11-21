@@ -6,7 +6,7 @@
 
 ## Background:
 
-This repository contains scripts and links to data tables and raw sequencing data to a pre-print: "Rapid reprogramming and stabilisation of homoeolog expression bias in hexaploid wheat biparental populations" [link](https://www.biorxiv.org/content/10.1101/2024.08.01.606180v2.abstract)
+This repository contains scripts and links to data tables and raw sequencing data to a pre-print: "Rapid reprogramming and stabilisation of homoeolog expression bias in hexaploid wheat biparental populations" [(link)](https://www.biorxiv.org/content/10.1101/2024.08.01.606180v2.abstract)
 
 In this study, we analyse Homoeolog Expression Bias inheritance patterns in two F<sub>5</sub> biparental populations with a common parent: Paragon (W10074 PF-1) x Charger (WPxCHA – 1001), and Paragon (W10074 PF-1) x Watkins (WATDE0228).
 
