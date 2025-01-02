@@ -1,6 +1,6 @@
 # Gene Ontology enrichment analysis
 
-Data tables necessary to run the script are available on [figshare](https://figshare.com/account/projects/214495/articles/26391058).
+Data tables necessary to run the script are available on [figshare](https://figshare.com/articles/dataset/Data_tables_for_gene_ontology_enrichment_analysis/26391058?file=47981404).
 
 ## Scripts:
 
