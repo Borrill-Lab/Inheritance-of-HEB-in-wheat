@@ -124,7 +124,7 @@ diffmap_PC <- reduce_sub_all_PC[reduce_sub_all_PC$PC_C_ != reduce_sub_all_PC$PC_
 
 # # # # # # # # # # # # # # Now, based on the whole genes-with-snp distribution map, extract data for PW cross
 # SNPs were already quality filtered during variant calling, do some post-filtering
-# Extract only SNPs that are called at least in 5 samples with DP >= 10
+# Extract only SNPs that are called at least in 10 samples with DP >= 5
 sub_all_head <- map_all[,c("id","chr","pos","gene.id","gene.start","gene.end","REF","ALT")]
 sub_all_PW <- map_all %>%
   dplyr::select(matches("PW"))
