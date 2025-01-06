@@ -657,6 +657,19 @@ PCdistcheck <- F6_PCwhole %>%
 PWdistcheck <- F6_PWwhole %>%
   pivot_wider(values_from = c('distance_to_parent','cv_parent','tpm_parent'),names_from = which_parent)
 
+#Add categories
+PCdistcheck$category <- 'Uncategorised'
+PCdistcheck$category[PCdistcheck$`distance_to_parent_To C`<0.1 & PCdistcheck$`distance_to_parent_To P`>0.2] <- 'DFO_a'
+PCdistcheck$category[PCdistcheck$`distance_to_parent_To C`>0.2 & PCdistcheck$`distance_to_parent_To P`<0.1] <- 'DFO_b'
+PCdistcheck$category[PCdistcheck$`distance_to_parent_To C`>0.2 & PCdistcheck$`distance_to_parent_To P`>0.2] <- 'DFB'
+PCdistcheck$category[PCdistcheck$`distance_to_parent_To C`<0.2 & PCdistcheck$`distance_to_parent_To P`<0.2] <- 'Conserved'
+
+PWdistcheck$category <- 'Uncategorised'
+PWdistcheck$category[PWdistcheck$`distance_to_parent_To W`<0.1 & PWdistcheck$`distance_to_parent_To P`>0.2] <- 'DFO_a'
+PWdistcheck$category[PWdistcheck$`distance_to_parent_To W`>0.2 & PWdistcheck$`distance_to_parent_To P`<0.1] <- 'DFO_b'
+PWdistcheck$category[PWdistcheck$`distance_to_parent_To W`>0.2 & PWdistcheck$`distance_to_parent_To P`>0.2] <- 'DFB'
+PWdistcheck$category[PWdistcheck$`distance_to_parent_To W`<0.2 & PWdistcheck$`distance_to_parent_To P`<0.2] <- 'Conserved'
+
 exPCdistcheck <- PCdistcheck[,c('group_id','genotype','id','category')]
 PCsupp_table <- updated_F6_PCwhole %>%
   inner_join(exPCdistcheck)
