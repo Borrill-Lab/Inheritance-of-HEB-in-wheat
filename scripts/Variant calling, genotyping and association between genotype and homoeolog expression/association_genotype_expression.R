@@ -677,8 +677,8 @@ PCsupp_table <- updated_F6_PCwhole %>%
 exPWdistcheck <- PWdistcheck[,c('group_id','genotype','id','category')]
 PWsupp_table <- updated_F6_PWwhole %>%
   inner_join(exPWdistcheck)
-colnames(PCsupp_table)[1] <- 'f6line'
-colnames(PWsupp_table)[1] <- 'f6line'
+colnames(PCsupp_table)[1] <- 'f5line'
+colnames(PWsupp_table)[1] <- 'f5line'
 colnames(PCsupp_table)[18] <- 'bias_distance_to_P'
 colnames(PWsupp_table)[18] <- 'bias_distance_to_P'
 colnames(PCsupp_table)[19] <- 'bias_distance_to_C'
@@ -694,8 +694,44 @@ PWsupp_table <- PWsupp_table[,c('f6line','group_id','A_tpm','B_tpm','D_tpm','A',
 PCsupp_table$cv <- PCsupp_table$cv*100
 PWsupp_table$cv <- PWsupp_table$cv*100
 
-write.table(PCsupp_table,'/Users/glombik/work/Documents/my_articles/inheritance_2023/Supplementary_table_2.tsv',quote = F,row.names = F,sep = '\t')
-write.table(PWsupp_table,'/Users/glombik/work/Documents/my_articles/inheritance_2023/Supplementary_table_3.tsv',quote = F,row.names = F,sep = '\t')
+homologies <- read.csv(file="homoeologs_1_1_1_synt_and_non_synt.csv")
+homologies <- homologies[,1:4]
+colnames(homologies) <- c('triad_id','A_homoeolog','B_homoeolog','D_homoeolog')
+
+#adjust column names and add gene names
+colnames(PCsupp_table) <- c('f5line','triad_id','A_tpm','B_tpm','D_tpm','A_relative_expression','B_relative_expression',
+                            'D_relative_expression','cv','homoeolog_associated_expression_with_genotype','SNPs_identified_for_homoeologs_collapsed',
+                            'inherited_homoeolog_genotype_from_parent_collapsed','bias_distance_to_Paragon','bias_distance_to_Charger',
+                            'bias_distance_category')
+colnames(PWsupp_table) <- c('f5line','triad_id','A_tpm','B_tpm','D_tpm','A_relative_expression','B_relative_expression',
+                            'D_relative_expression','cv','homoeolog_associated_expression_with_genotype','SNPs_identified_for_homoeologs_collapsed',
+                            'inherited_homoeolog_genotype_from_parent_collapsed','bias_distance_to_Paragon','bias_distance_to_Watkins',
+                            'bias_distance_category')
+
+PCsupp_table_homoeologs <- PCsupp_table %>%
+  inner_join(homologies)
+PCsupp_table_homoeologs$inherited_homoeolog_genotype_from_parent_collapsed <- gsub('P1','Paragon',PCsupp_table_homoeologs$inherited_homoeolog_genotype_from_parent_collapsed)
+PCsupp_table_homoeologs$inherited_homoeolog_genotype_from_parent_collapsed <- gsub('P2','Charger',PCsupp_table_homoeologs$inherited_homoeolog_genotype_from_parent_collapsed)
+
+PWsupp_table_homoeologs <- PWsupp_table %>%
+  inner_join(homologies)
+PWsupp_table_homoeologs$inherited_homoeolog_genotype_from_parent_collapsed <- gsub('P1','Paragon',PWsupp_table_homoeologs$inherited_homoeolog_genotype_from_parent_collapsed)
+PWsupp_table_homoeologs$inherited_homoeolog_genotype_from_parent_collapsed <- gsub('P2','Watkins',PWsupp_table_homoeologs$inherited_homoeolog_genotype_from_parent_collapsed)
+
+# Now just reorder the columns neatly
+PCsupp_table_homoeologs <- PCsupp_table_homoeologs[,c('f5line','triad_id','A_homoeolog','B_homoeolog','D_homoeolog',
+                                                      'A_tpm','B_tpm','D_tpm','A_relative_expression','B_relative_expression',
+                                                      'D_relative_expression','cv','homoeolog_associated_expression_with_genotype','SNPs_identified_for_homoeologs_collapsed',
+                                                      'inherited_homoeolog_genotype_from_parent_collapsed','bias_distance_to_Paragon','bias_distance_to_Charger',
+                                                      'bias_distance_category')]
+PWsupp_table_homoeologs <- PWsupp_table_homoeologs[,c('f5line','triad_id','A_homoeolog','B_homoeolog','D_homoeolog',
+                                                      'A_tpm','B_tpm','D_tpm','A_relative_expression','B_relative_expression',
+                                                      'D_relative_expression','cv','homoeolog_associated_expression_with_genotype','SNPs_identified_for_homoeologs_collapsed',
+                                                      'inherited_homoeolog_genotype_from_parent_collapsed','bias_distance_to_Paragon','bias_distance_to_Watkins',
+                                                      'bias_distance_category')]
+
+write.table(PCsupp_table_homoeologs,'/Users/glombik/work/Documents/my_articles/inheritance_2023/Supplementary_table_2.tsv',quote = F,row.names = F,sep = '\t')
+write.table(PWsupp_table_homoeologs,'/Users/glombik/work/Documents/my_articles/inheritance_2023/Supplementary_table_3.tsv',quote = F,row.names = F,sep = '\t')
 
 
 
