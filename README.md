@@ -19,7 +19,7 @@ The wheat genome reference used to map/pseudoalign the RNA-seq data to is The IW
 
 The wheat transcriptome reference and genome annotation used to map SNPs to is The IWGSC RefSeq v1.1 annotation available [here](https://urgi.versailles.inra.fr/download/iwgsc/IWGSC_RefSeq_Annotations/v1.1/).
 
-The triad identification file "homoeologs_1_1_1_synt_and_non_synt.csv" is adapted from [HCtriads.tsv](https://opendata.earlham.ac.uk/wheat/under_license/toronto/Ramirez-Gonzalez_etal_2018-06025-Transcriptome-Landscape/data/TablesForExploration/) published as a part of datased in [Ramírez-González et al. (2018)](https://www.science.org/doi/full/10.1126/science.aar6089).
+The triad identification file "homoeologs_1_1_1_synt_and_non_synt.csv" is adapted from [HCtriads.tsv](https://opendata.earlham.ac.uk/wheat/under_license/toronto/Ramirez-Gonzalez_etal_2018-06025-Transcriptome-Landscape/data/TablesForExploration/) published as a part of dataset in [Ramírez-González et al. (2018)](https://www.science.org/doi/full/10.1126/science.aar6089).
 
 All data tables necessary to run scripts associated with this project are located in the [figshare](https://figshare.com/projects/Reprogramming_and_stabilisation_of_homoeolog_expression_bias_in_hexaploid_wheat_biparental_populations/214495) repository, organised by Methods sections just like scripts (see below).
 
