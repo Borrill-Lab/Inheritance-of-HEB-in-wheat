@@ -7,39 +7,39 @@ library(svglite)
 library(ggpattern)
 library(ggpubr)
 # Panel A - base with an example triad expression based on CV difference between replicates - finishing touches done in Inkscape
-fig1_panelA <- read.table('fig1-panelA',header = T)
 
-ggtern(fig1_panelA,aes(A_tpm,D_tpm,B_tpm)) +
+fig1_panelAupdate <- read.table('fig1-panelAupdate',header = T)
+
+#Now plot it in a triangle
+
+ggtern(fig1_panelAupdate,aes(A_tpm,D_tpm,B_tpm,fill=shade)) +
   geom_Tline(Tintercept = c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9),colour="white",linetype="dashed") +
   geom_Rline(Rintercept = c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9),colour="white",linetype="dashed") +
   geom_Lline(Lintercept = c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9),colour="white",linetype="dashed") +
   geom_mask() +
-  geom_point(colour="black",size=3,alpha=0.8,fill='white',pch=21) +
+  geom_point(colour="black",size=5,alpha=0.8,pch=21,fill='white') +
   labs(x="A",y="D",z="B") +
   theme_gray() +
   theme(axis.title = element_text(size = 15),axis.text = element_text(size = 10))
-ggsave('fig1_panelA.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
+ggsave('fig1_panelAupdate.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
 
 # Panel B
 
-fig1_panelB <- read.table('fig1-panelB',header = T)
-fig1_panelB$Categories <- as.character(fig1_panelB$Categories)
+fig1_panelBupdate <- read.table('fig1-panelBupdate',header = T)
 
-ggplot(fig1_panelB,aes(perc,countperc,color=cross,linetype=Categories)) +
-  geom_line(linewidth=1,alpha=0.8,position = position_dodge(width = 8)) +
-  scale_linetype_manual(values = c("solid","dashed", "dotted")) +
-  scale_color_manual(values = c("black", "#009128ff"),labels=c('PxC','PxW'),name='Cross') +
+ggplot(fig1_panelBupdate) + geom_histogram(aes(perc,fill=cross,color=cross),alpha=0.8,position=position_dodge(),binwidth = 1) +
+  facet_wrap(~distinct_in_triad,nrow = 3) +
+  scale_fill_manual(values = c('black','#009128ff')) +
+  scale_color_manual(values = c('black','#009128ff')) +
   theme_classic() +
-  xlab(expression('Percentage of F'[5]~'lines with biological replicates in 1, 2, or 3 categories')) +
+  xlab(bquote('Percentage of '~F[5]~' lines')) +
   ylab('Number of triads') +
-  annotate('text',x=70,y=3200,label=paste0('PxW Total triads = 12,598\n100 % in 1 category = 3,179 (25 %)'),color='#009128ff',size=7) +
-  annotate('text',x=65,y=2800,label=paste0('PxC Total triads = 12,717\n100 % in 1 category = 2,929 (23 %)'),color='black',size=7) +
   theme(axis.text = element_text(size = 18),
         axis.title = element_text(size=22),
         legend.text = element_text(size = 18),
-        legend.title = element_text(size = 22))
-
-ggsave('fig1-panelB.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
+        legend.title = element_text(size = 22),
+        strip.text.x = element_text(size = 15))
+ggsave('fig1_panelBupdate.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
 
 # Panel C
 fig1_panelC <- read.table('fig1-panelC',header = T,sep = '\t')
