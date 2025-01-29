@@ -206,19 +206,37 @@ schemeCV_PC <- bias_categ_f6[bias_categ_f6$f6line=='PW.11' & bias_categ_f6$group
 schemeCV_PC$cv <- apply(schemeCV_PC[4:6],1,sd)/apply(schemeCV_PC[4:6],1,mean)
 mean(schemeCV_PC$cv)
 
+#calculate CV for all
+scheme_cvupdate <- bias_categ_f6[bias_categ_f6$f6line %in% bias2distinct$f6line & bias_categ_f6$group_id %in% bias2distinct$group_id,]
+scheme_cvupdate$cv <- apply(scheme_cvupdate[4:6],1,sd)/apply(scheme_cvupdate[4:6],1,mean)
+
+domcv <- scheme_cvupdate[scheme_cvupdate$general_name_mins =='Dominant',]
+graph_domcv <- domcv[domcv$f6line=='PC.36' & domcv$group_id=='16470',]
+
+balcv <- scheme_cvupdate[scheme_cvupdate$general_name_mins =='Central',]
+graph_balcv <- balcv[balcv$f6line=='PC.10' & balcv$group_id=='105',]
+
+
+suppcv <- scheme_cvupdate[scheme_cvupdate$general_name_mins =='Suppressed',]
+graph_suppcv <- suppcv[suppcv$f6line=='PC.10' & suppcv$group_id=='62',]
+
+graph_all_bias <- rbind(graph_domcv,graph_suppcv,graph_balcv)
+graph_all_bias$shade <- rownames(graph_all_bias)
+
+write.table(graph_all_bias,'Detection_of_eQTL/new_prep_data/fig1-panelAupdate',quote = F,row.names = F,sep = '\t')
 
 #Now plot it in a triangle
 
-ggtern(schemeCV_PC,aes(A_tpm,D_tpm,B_tpm)) +
+ggtern(graph_all_bias,aes(A_tpm,D_tpm,B_tpm,fill=shade)) +
   geom_Tline(Tintercept = c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9),colour="white",linetype="dashed") +
   geom_Rline(Rintercept = c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9),colour="white",linetype="dashed") +
   geom_Lline(Lintercept = c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9),colour="white",linetype="dashed") +
   geom_mask() +
-  geom_point(colour="black",size=3,alpha=0.8,fill='white',pch=21) +
+  geom_point(colour="black",size=5,alpha=0.8,pch=21,fill='white') +
   labs(x="A",y="D",z="B") +
   theme_gray() +
   theme(axis.title = element_text(size = 15),axis.text = element_text(size = 10))
-ggsave('/Users/glombik/work/obj1_reanalysis/revised/HEB_variation_triangle.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
+ggsave('review_HEB_variation_triangle.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
 
 
 #################
