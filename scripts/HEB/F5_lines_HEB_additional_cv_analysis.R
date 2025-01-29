@@ -93,34 +93,23 @@ dim(bias_categ_f6_sum_sum[bias_categ_f6_sum_sum$distinct_in_triad==1 & bias_cate
                             bias_categ_f6_sum_sum$total_samples==50 & bias_categ_f6_sum_sum$perc>=90,])
 # 5731
 
+# revised Bar plot showing CV variation in replicates compared to bias expression categories
+bar_over_50_samp_f6_distinct <- bias_categ_f6_sum_sum[bias_categ_f6_sum_sum$total_samples==50,]
 
-# Try the line graph as Phlippa suggested for it
-
-over_50_samp_f6_distinct <- bias_categ_f6_sum_sum[bias_categ_f6_sum_sum$total_samples==50,]
-over_50_samp_f6_distinct <- over_50_samp_f6_distinct %>%
-  arrange(cross,perc,distinct_in_triad) %>%
-  group_by(perc,cross,distinct_in_triad) %>%
-  summarise(countperc=n())
-
-over_50_samp_f6_distinct$distinct_in_triad <- as.character(over_50_samp_f6_distinct$distinct_in_triad)
-colnames(over_50_samp_f6_distinct)[3] <- 'Categories' 
-ggplot(over_50_samp_f6_distinct,aes(perc,countperc,color=cross,linetype=Categories)) +
-  geom_line(linewidth=1,alpha=0.8,position = position_dodge(width = 8)) +
-  scale_linetype_manual(values = c("solid","dashed", "dotted")) +
-  scale_color_manual(values = c("black", "#009128ff"),labels=c('PxC','PxW'),name='Cross') +
+ggplot(bar_over_50_samp_f6_distinct) + geom_histogram(aes(perc,fill=cross,color=cross),alpha=0.8,position=position_dodge(),binwidth = 1) +
+  facet_wrap(~distinct_in_triad,nrow = 3) +
+  scale_fill_manual(values = c('black','#009128ff')) +
+  scale_color_manual(values = c('black','#009128ff')) +
   theme_classic() +
-  xlab(expression('Percentage of F'[5]~'lines with biological replicates in 1, 2, or 3 categories')) +
+  xlab(bquote('Percentage of '~F[5]~' lines')) +
   ylab('Number of triads') +
-  annotate('text',x=70,y=3200,label=paste0('PxW Total triads = 12,598\n100 % in 1 category = 3,179 (25 %)'),color='#009128ff',size=7) +
-  annotate('text',x=65,y=2800,label=paste0('PxC Total triads = 12,717\n100 % in 1 category = 2,929 (23 %)'),color='black',size=7) +
   theme(axis.text = element_text(size = 18),
         axis.title = element_text(size=22),
         legend.text = element_text(size = 18),
-        legend.title = element_text(size = 22))
-  
-
-ggsave('/Users/glombik/work/obj1_reanalysis/revised/HEB_variation_in_reps_line_cumulative.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
-ggsave('/Users/glombik/work/obj1_reanalysis/revised/HEB_variation_in_reps_line_cumulative.png',device = 'png',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
+        legend.title = element_text(size = 22),
+        strip.text.x = element_text(size = 15))
+ggsave('HEB_variation_in_reps_hist.svg',device = 'svg',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
+ggsave('HEB_variation_in_reps_hist.png',device = 'png',height = 8,width = 12,dpi = 400,units = 'in',plot = last_plot())
 
 ### Supp figure - plot it as a triangular graph showing the density of triads based on the multiple categories
 
