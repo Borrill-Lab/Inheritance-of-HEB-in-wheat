@@ -17,8 +17,8 @@ gatk-genotypegvcfs.PC/PW.pl - performs joint genotyping on samples
 
 # Detection of eQTL
 
-Data tables necessary to run the scripts are available on [figshare](https://figshare.com/account/projects/214495/articles/26395483)
+Data tables necessary to run the scripts are available on [figshare](https://figshare.com/account/projects/214495/articles/28308998?file=52023947)
 
 ## Scripts:
 
-eQTL_analysis_phenotype_data_incl.R - runs the SNP filtering and subsequent eQTL analysis
+LMM_eQTL_PC_PW.R - runs the SNP filtering and subsequent LMM and eQTL analysis
